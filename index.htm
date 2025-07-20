@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weathery.io</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="app">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="app-title">Weathery.io</h1>
+            <button class="refresh-btn" id="refreshBtn" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <polyline points="1 20 1 14 7 14"></polyline>
+                    <path d="m3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                </svg>
+                Refresh
+            </button>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <input
+                    type="text"
+                    class="search-input"
+                    id="searchInput"
+                    placeholder="Enter city name..."
+                    autocomplete="off"
+                >
+                <button class="search-btn" id="searchBtn" type="button">
+                    Search
+                </button>
+            </div>
+        </section>
+
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage">
+            <p>Location not found. Please try again.</p>
+        </div>
+
+        <!-- Loading State -->
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <!-- Weather Content -->
+        <div class="weather-content" id="weatherContent">
+            <!-- Current Weather -->
+            <section class="current-weather">
+                <div class="weather-main">
+                    <div class="weather-icon">
+                        <img src="" alt="" id="weatherIcon">
+                    </div>
+                    <div class="weather-info">
+                        <h2 class="temperature" id="temperature">--°</h2>
+                        <p class="description" id="description">--</p>
+                        <p class="location" id="location">--</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weather Details -->
+            <section class="weather-details">
+                <h3 class="section-title">Details</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Feels like</span>
+                        <span class="detail-value" id="feelsLike">--°</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Humidity</span>
+                        <span class="detail-value" id="humidity">--%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Wind</span>
+                        <span class="detail-value" id="windSpeed">-- km/h</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Pressure</span>
+                        <span class="detail-value" id="pressure">-- hPa</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hourly Forecast -->
+            <section class="hourly-forecast">
+                <h3 class="section-title">Hourly Forecast</h3>
+                <div class="hourly-container" id="hourlyContainer">
+                    <!-- Hourly items will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Daily Forecast -->
+            <section class="daily-forecast">
+                <h3 class="section-title">5-Day Forecast</h3>
+                <div class="daily-container" id="dailyContainer">
+                    <!-- Daily items will be populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
